@@ -69,6 +69,11 @@ namespace tests
                     consumerVersionTags: new List<string> { "master", "prod" });
             }
 
+            Console.WriteLine($"GIT_COMMIT = '{System.Environment.GetEnvironmentVariable("GIT_COMMIT")}'");
+            Console.WriteLine($"PACT_URL = '{System.Environment.GetEnvironmentVariable("PACT_URL")}'");
+            Console.WriteLine($"PACT_BROKER_TOKEN = '{System.Environment.GetEnvironmentVariable("PACT_BROKER_TOKEN")}'");
+            Console.WriteLine($"PACT_BROKER_BASE_URL = '{System.Environment.GetEnvironmentVariable("PACT_BROKER_BASE_URL")}'");
+
             // Act / Assert
             pactVerifier.Verify();
 
