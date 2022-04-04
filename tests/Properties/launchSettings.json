@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "tests": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "GIT_COMMIT": "92aa6dafe81b905ab96ae05c988d05cb48e9f165",
+        "PACT_BROKER_TOKEN": "hzEalA5OGKiz9as30Dm9Mw",
+        "PACT_URL": "https://ricardocruz.pactflow.io",
+        "PACT_BROKER_BASE_URL": "https://ricardocruz.pactflow.io"
+      }
+    }
+  }
+}
