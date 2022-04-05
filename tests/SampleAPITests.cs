@@ -57,7 +57,7 @@ namespace tests
             string pactUrl = System.Environment.GetEnvironmentVariable("PACT_URL");
             pactVerifier
                 .ProviderState($"{_pactServiceUri}/provider-states")
-                .ServiceProvider("SampleAPP", _providerUri);
+                .ServiceProvider("SampleConsumer", _providerUri);
 
             if (pactUrl != "" && pactUrl != null) {
                 // Webhook path - verify the specific pact
