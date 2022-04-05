@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
+using tests.Middleware;
 
 namespace tests
 {
@@ -29,7 +30,7 @@ namespace tests
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            //app.UseMiddleware<ProviderStateMiddleware>();
+            app.UseMiddleware<ProviderStateMiddleware>();
             app.UseMvc();
         }
     }
