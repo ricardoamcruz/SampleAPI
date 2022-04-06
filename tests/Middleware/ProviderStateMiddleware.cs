@@ -27,12 +27,12 @@ namespace tests.Middleware
             {
                 {
                     "/Responses/WithStatusCode200",
-                    AddData
+                    Code200
                 }
             };
         }
 
-        private void AddData()
+        private void Code200()
         {
             _statusCode = _responsesController.GetWithCode200();
         }
