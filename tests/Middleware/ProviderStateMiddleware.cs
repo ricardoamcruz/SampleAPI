@@ -5,8 +5,10 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http;
 using Newtonsoft.Json;
+using SampleAPI.Controllers;
 
 namespace tests.Middleware
 {
@@ -14,11 +16,13 @@ namespace tests.Middleware
     {
         private readonly RequestDelegate _next;
         private readonly IDictionary<string, Action> _providerStates;
-        private HttpStatusCode _statusCode;
+        private readonly ResponsesController _responsesController;
+        private IActionResult _statusCode;
 
         public ProviderStateMiddleware(RequestDelegate next)
         {
             _next = next;
+            _responsesController = new ResponsesController();
             _providerStates = new Dictionary<string, Action>
             {
                 {
@@ -30,7 +34,7 @@ namespace tests.Middleware
 
         private void AddData()
         {
-            _statusCode = HttpStatusCode.OK;
+            _statusCode = _responsesController.GetWithCode200();
         }
 
         public async Task Invoke(HttpContext context)
