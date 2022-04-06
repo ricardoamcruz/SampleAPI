@@ -30,8 +30,12 @@ namespace tests.Middleware
                     Code200
                 },
                 {
-                    "/Responses/WithTestStatus",
+                    "/Responses/WithTestStatus false",
                     TestFalse
+                },
+                {
+                    "/Responses/WithTestStatus true",
+                    TestTrue
                 }
             };
         }
@@ -43,7 +47,12 @@ namespace tests.Middleware
 
         private void TestFalse()
         {
-            _statusCode = _responsesController.GetWithTestStatus(false);
+            //_statusCode = _responsesController.GetWithTestStatus(false);
+        }
+
+        private void TestTrue()
+        {
+            //_statusCode = _responsesController.GetWithTestStatus(true);
         }
 
         public async Task Invoke(HttpContext context)

@@ -3,7 +3,7 @@
     "tests": {
       "commandName": "Project",
       "environmentVariables": {
-        "GIT_COMMIT": "f2b73550666c5d7dc9b3dc3ad9c8bda66fbcf062",
+        "GIT_COMMIT": "e3da9ec8cedffa81e2298f74c29ace94efb86cb3",
         "PACT_BROKER_TOKEN": "hzEalA5OGKiz9as30Dm9Mw",
         "PACT_URL": "https://ricardocruz.pactflow.io",
         "PACT_BROKER_BASE_URL": "https://ricardocruz.pactflow.io"
