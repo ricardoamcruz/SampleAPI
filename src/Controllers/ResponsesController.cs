@@ -16,6 +16,7 @@ namespace SampleAPI.Controllers
 
         [HttpGet("WithStatusCode200")]
         [ProducesResponseType(200, Type = typeof(IActionResult))]
+        [ProducesResponseType(204)]
         public IActionResult GetWithCode200()
         {
             return StatusCode(200);
