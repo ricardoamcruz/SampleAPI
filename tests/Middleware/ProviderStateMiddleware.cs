@@ -32,10 +32,6 @@ namespace tests.Middleware
                 {
                     "/Responses/WithTestStatus false",
                     TestFalse
-                },
-                {
-                    "/Responses/WithTestStatus true",
-                    TestTrue
                 }
             };
         }
