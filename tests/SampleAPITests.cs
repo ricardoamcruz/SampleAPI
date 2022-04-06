@@ -59,15 +59,18 @@ namespace tests
                 .ProviderState($"{_pactServiceUri}/provider-states")
                 .ServiceProvider("SampleAPI", _providerUri);
 
-            //if (pactUrl != "" && pactUrl != null) {
-            //    // Webhook path - verify the specific pact
-            //    pactVerifier.PactUri(pactUrl, new PactUriOptions(System.Environment.GetEnvironmentVariable("PACT_BROKER_TOKEN")));
-            //} else {
+            if (pactUrl != "" && pactUrl != null)
+            {
+                // Webhook path - verify the specific pact
+                pactVerifier.PactUri(pactUrl, new PactUriOptions(System.Environment.GetEnvironmentVariable("PACT_BROKER_TOKEN")));
+            }
+            else
+            {
                 // Standard verification path - run the
                 pactVerifier.PactBroker(System.Environment.GetEnvironmentVariable("PACT_BROKER_BASE_URL"),
                     uriOptions: new PactUriOptions(System.Environment.GetEnvironmentVariable("PACT_BROKER_TOKEN")),
                     consumerVersionTags: new List<string> { "master", "prod" });
-            //}
+            }
 
             //Console.WriteLine($"GIT_COMMIT = '{System.Environment.GetEnvironmentVariable("GIT_COMMIT")}'");
             //Console.WriteLine($"PACT_URL = '{System.Environment.GetEnvironmentVariable("PACT_URL")}'");
