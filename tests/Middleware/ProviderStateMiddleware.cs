@@ -46,11 +46,6 @@ namespace tests.Middleware
             //_statusCode = _responsesController.GetWithTestStatus(false);
         }
 
-        private void TestTrue()
-        {
-            //_statusCode = _responsesController.GetWithTestStatus(true);
-        }
-
         public async Task Invoke(HttpContext context)
         {
             if (context.Request.Path.Value == "/provider-states")
