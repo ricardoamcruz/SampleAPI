@@ -38,7 +38,7 @@ namespace tests.Middleware
 
         private void Code200()
         {
-            _statusCode = _responsesController.GetWithCode200();
+            //_statusCode = _responsesController.GetWithCode200();
         }
 
         private void TestFalse()
