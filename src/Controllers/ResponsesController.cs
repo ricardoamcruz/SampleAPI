@@ -14,13 +14,6 @@ namespace SampleAPI.Controllers
     {
         private readonly int[] codes = { 200, 201, 204, 205, 304, 400, 403, 404, 405, 500, 502, 503, 504 };
 
-        [HttpGet("WithStatusCode200")]
-        [ProducesResponseType(200, Type = typeof(IActionResult))]
-        public IActionResult GetWithCode200()
-        {
-            return StatusCode(200);
-        }
-
         [HttpGet("WithTestStatus")]
         [ProducesResponseType(200, Type = typeof(IActionResult))]
         [ProducesResponseType(204)]
